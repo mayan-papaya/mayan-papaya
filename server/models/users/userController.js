@@ -40,8 +40,7 @@ module.exports = {
         password  = req.body.password,
         create,
         newUser;
-
-        console.log('~~~~~~~~~~~~~~~~~user: ', User.findOne);
+        
     var findOne = Q.nbind(User.findOne, User);
     // check to see if user already exists
     findOne({username: username})

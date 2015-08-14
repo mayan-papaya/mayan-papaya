@@ -2,7 +2,6 @@ var express = require('express');
 var path = require('path');
 var mongoose = require('mongoose');
 var apiKey = require('./server/api-config').apiKey;
-var unirest = require('unirest');
 var app = express();
 
 require('./server/config/middleware.js')(app, express);
@@ -44,22 +43,23 @@ if (!module.parent) {
 
 //alternate api (better imo)
 //includes a point value for each question which
-app.get('/api/trivia', function(req, res) {
-  unirest.get("http://jservice.io/api/random?count=10")
-  .header("Accept", "application/json")
-  .end(function (result) {
-    res.send(result.body);
-  });
-});
+// app.get('/api/trivia', function(req, res) {
+//   unirest.get("http://jservice.io/api/random?count=10")
+//   .header("Accept", "application/json")
+//   .end(function (result) {
+//     console.log(result.body);
+//     res.send(result.body);
+//   });
+// });
 
-//alternate api categories request
-app.get('/api/trivia-categories', function(req, res) {
-  unirest.get("http://jservice.io/api/categories?count=10")
-  .header("Accept", "application/json")
-  .end(function (result) {
-    res.send(result.body);
-  });
-});
+// //alternate api categories request
+// app.get('/api/trivia-categories', function(req, res) {
+//   unirest.get("http://jservice.io/api/categories?count=10")
+//   .header("Accept", "application/json")
+//   .end(function (result) {
+//     res.send(result.body);
+//   });
+// });
 
 module.exports = app;
 
