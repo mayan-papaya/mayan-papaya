@@ -130,7 +130,6 @@
           $scope.nextLoc();
         });
       }
-      $scope.finalScore = $scope.score || 0;
     };
 
 
