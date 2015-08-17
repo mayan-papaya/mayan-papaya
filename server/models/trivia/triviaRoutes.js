@@ -11,12 +11,20 @@ module.exports = function(app){
     unirest.get("http://jservice.io/api/random?count=100") // changed to 100
     .header("Accept", "application/json")
     .end(function (result) {
+      var pureQuestionsArr = [];
       triviaController.addQuestion(result);
       for(var i = 0; i < result.body.length; i++){
-        result.body[i].clue = triviaController.getClue(cleanAnswer(result.body[i].answer));
-        delete result.body[i].answer;
+        var questionObj = result.body[i];
+        var answer = questionObj.answer;
+        questionObj.clue = triviaController.getClue(cleanAnswer(questionObj.answer));
+        if (/[^a-z]/i.test(answer) || answer === '') { // ^a-z means NOT a letter
+          delete questionObj.answer;
+        } else {
+          delete questionObj.answer;
+          pureQuestionsArr.push(questionObj);
+        }
       }
-      res.send(result.body);
+      res.send(pureQuestionsArr);
     });
   });
 

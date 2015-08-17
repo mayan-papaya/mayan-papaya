@@ -89,17 +89,7 @@
     $scope.getQuestions = function() {
       Questions.getQuestions()
         .success(function(data) {
-          var pureQuestionsArr = [];
-          for (var i=0; i<data.length; i++) {
-            var questionObj = data[i];
-            var answer = data[i].answer;
-            if (/[^a-z]/i.test(answer) || answer === '') { // ^a-z means NOT a letter
-              // do nothing
-            } else {
-              pureQuestionsArr.push(questionObj);
-            }
-          }
-          $scope.questions = pureQuestionsArr;
+          $scope.questions = data;
         });
     };
     $scope.getQuestions();
