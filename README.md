@@ -20,7 +20,7 @@ Please read below for a detailed account of the functionality behind TriviaWithF
 
 
 
-1) ClIENT SIDE:
+1) CLIENT SIDE:
 
 
 Navigation.js
@@ -172,12 +172,15 @@ Use $location service to communicate false or true to ng-show directive.
 b)Profile.js and Profile.html
 
 Profile.js:
+
 Profile factory:
+
 Uses $http, $location, and $window services.
 $http: facilitates communication between client and server side
 $window: uses localStorage method to store data locally within the user's browser
 
 Has a getUserData function with a username parameter and the following:
+
 return $http.post('/api/users/profile', {
   username: username
 }).then(function (res) {
@@ -191,7 +194,9 @@ Step 2: Bounces to our userRouter file:
 app.post('/profile', userController.getUserData);
 
 Step 3: Bounces to userController and calls getUserData function, which returns a stringified JSON user object.
+
 Profile controller:
+
 Has the Profile Factory as a dependency
 
 This is a great example of the user data being sent back from the database:
@@ -235,6 +240,7 @@ Query '/api/trivia', which is handled by our middleware.
 And $http.put('/api/users', {}) is used to update the user in the database
 
 Trivia Controller:
+
 Notable dependency services include $http, $interval (for the timer), and $location.
 
 In short, the trivia controller 1) calls methods laid out in the trivia factory, and 2) defines methods that are called from trivia.html, trivia.play.html, and trivia.endgame.html
@@ -270,20 +276,33 @@ Step 4 in detail: In app.run, we want to make sure the user is authorized. We li
 2) FURTHER REVIEW OF SERVER SIDE:
 
 a) App.js (Our server--different file than the one in client)
+
 b) Config
+
  -Helper
+ 
  -Middleware
+ 
 c) Models
+
  Trivia:
+ 
  -TriviaController.js
+ 
  -TriviaModel.js
+ 
  -TriviaRoutes.js
+ 
  Users:
+ 
  -UserController.js
+ 
  -UserModel.js
+ 
  -UserRoutes.js
 
 a) App.js (server)
+
   Express, mongoose, and server are initialized here.
   With a require statement, we inject our server and express into config/middleware.js for setup:
 
@@ -294,6 +313,7 @@ a) App.js (server)
 
 
 b1) Middleware.js
+
   Requires all express middleware and sets it up.
   -morgan: for logging incoming requests
   -bodyParser: populates req.body with (among other things) the value of any given POST parameter
@@ -316,6 +336,7 @@ b1) Middleware.js
 
 
 b2) Helper.js
+
   Requires jwt module, which lets us authenticate HTTP requests using JWT tokens (protects API endpoint)
 
   Has errorLogger and errorHandler functions, which log errors and send error messages to the client, respectively.
@@ -325,10 +346,13 @@ b2) Helper.js
 
 
 c) Models
+
 c1) Trivia
+
   It makes most sense to explain the model, controller, and the routes in that order.
 
   I) triviaModel.js
+  
   Requires mongoose.
 
   TriviaSchema contains:
@@ -341,6 +365,7 @@ c1) Trivia
 
 
   II) triviaController.js
+  
   Onto the triviaController. It requires the triviaModel, and Q module.
   var Trivia = require('./triviaModel.js');
   var Q = require('q');
@@ -357,6 +382,7 @@ c1) Trivia
 
 
   III) triviaRoutes.js
+  
   Requires the triviaController and unirest.
   -unirest was a module recommended by our API
   All triviaRoutes are within module.exports.
@@ -367,9 +393,11 @@ c1) Trivia
 
 
 c2) Users
+
   It makes most sense to explain the model, controller, and the routes in that order.
 
   I) userModel.js:
+  
   Requires mongoose, bcrypt, and Q modules.
   -mongoose: used for database schemas; works in an asynchronous environment
   -bcyrpt: hashes and safely stores passwords
@@ -400,6 +428,7 @@ c2) Users
 
 
   II) userController.js:
+  
   Onto the UserController. It requires the userModel, Q module, and jwt.
   All UserController functions are within module.exports.
 
@@ -431,6 +460,7 @@ c2) Users
 
 
   III) userRoutes.js:
+  
   Requires the userController.
   All UserRoutes are within module.exports.
 
