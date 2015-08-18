@@ -22,9 +22,13 @@ Please read below for a detailed account of the functionality behind TriviaWithF
 
 1) ClIENT SIDE:
 
+
 Navigation.js
+
 Profile.js
+
 Stats.js
+
 Trivia.js
 
 User.js (for user functions)
@@ -54,6 +58,7 @@ App.js (route handling)
 
 
 2) SERVER SIDE:
+
 
 App.js (Our server--different file than the one in client)
 
@@ -85,6 +90,7 @@ Models
 
 3) TESTS:
 
+
 Client-side:
 
 -ProfileControllerSpec.js
@@ -102,6 +108,7 @@ Server-side:
 
 
 4) ADDITIONAL FILES:
+
 
 Bower.json (w/ language dependencies) & .bowerrc
 
