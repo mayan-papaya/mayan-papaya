@@ -23,20 +23,33 @@ Please read below for a detailed account of the functionality behind TriviaWithF
 1) ClIENT SIDE:
 
 Navigation.js
+
 Profile.js
+
 Stats.js
+
 Trivia.js
+
 User.js (for user functions)
 
 Index.html (includes nav)
+
 Profile.html
+
 Stats.html
+
  -Stats.personal.html
+ 
  -Stats.global.html
+ 
 Trivia.html
+
  -Trivia.play.html
+ 
  -Trivia.endgame.html
+ 
 Signin.html
+
 Signup.html
 
 App.js (route handling)
@@ -48,16 +61,27 @@ App.js (route handling)
 App.js (Our server--different file than the one in client)
 
 Config
+
  -Helper
+ 
  -Middleware
+ 
 Models
+
  Trivia:
+ 
  -TriviaController.js
+ 
  -TriviaModel.js
+ 
  -TriviaRoutes.js
+ 
  Users
+ 
  -UserController.js
+ 
  -UserModel.js
+ 
  -UserRoutes.js
 
 
@@ -65,12 +89,17 @@ Models
 3) TESTS:
 
 Client-side:
+
 -ProfileControllerSpec.js
+
 -TriviaControllerSpec.js
+
 -TriviaFactorySpec.js
+
 -UserControllerSpec.js
 
 Server-side:
+
 -ServerSpec.js
 
 
@@ -78,10 +107,15 @@ Server-side:
 4) ADDITIONAL FILES:
 
 Bower.json (w/ language dependencies) & .bowerrc
+
 .gitignore
+
 .travis.yml (runs grunt test)
+
 Gruntfile (runs jshint, mochaTest, and karma)
+
 karma.conf (browser-side testing using Phantom.js)
+
 Package.json (w/ module and developer dependencies)
 
 
@@ -91,20 +125,33 @@ Package.json (w/ module and developer dependencies)
 1) FURTHER REVIEW OF CLIENT SIDE:
 
 a) Navigation.js
+
 b) Profile.js
+
 c) Stats.js
+
 d) Trivia.js
+
 e) User.js (for user functions)
 
 a) Index.html (includes nav)
+
 b) Profile.html
+
 c) Stats.html
+
  -Stats.personal.html
+ 
  -Stats.global.html
+ 
 d) Trivia.html
+
  -Trivia.play.html
+ 
  -Trivia.endgame.html
+ 
 e) Signin.html
+
    Signup.html
 
 f) App.js (route handling)
