@@ -51,6 +51,12 @@
         $scope.user = JSON.parse(data);
       });
 
+    $scope.userImage = (function() {
+      var username = ProfileFactory.getUsername();
+      var imageCode = username.charCodeAt(0) % 13;
+      return '/assets/avatars/av-' + imageCode + '.jpg';
+    })();
+
   }]);
 
 })();
