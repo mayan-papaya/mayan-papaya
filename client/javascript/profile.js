@@ -8,7 +8,7 @@
     var obj = {}; // export object so you can later add new objects and methods to our factories
 
     obj.getUsername = function() {
-      return $window.localStorage.getItem('com.TriviaWithFriends.username');
+      return $window.localStorage.getItem('com.TriviaWithFriends.username') || 'User';
     };
 
     obj.getUserData = function (username) {
@@ -50,6 +50,12 @@
       .then(function(data) {
         $scope.user = JSON.parse(data);
       });
+
+    $scope.userImage = (function() {
+      var username = ProfileFactory.getUsername();
+      var imageCode = username.charCodeAt(0) % 13;
+      return '/assets/avatars/av-' + imageCode + '.jpg';
+    })();
 
   }]);
 
