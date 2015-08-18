@@ -163,12 +163,14 @@ f) App.js (route handling)
 
 
 a) Navigation.js and Index.html
+
 Use $state service to communicate 'active' or '' to ng-class directive.
 Use $location service to communicate false or true to ng-show directive.
 
 
 
 b)Profile.js and Profile.html
+
 Profile.js:
 Profile factory:
 Uses $http, $location, and $window services.
@@ -193,6 +195,7 @@ Profile controller:
 Has the Profile Factory as a dependency
 
 This is a great example of the user data being sent back from the database:
+
 $scope.user = {
   "_id": "55ce9311dda321437709f35c",
   "salt": "$2a$10$gLPRaKFp3JG6J2M\/VOQ.uu",
@@ -214,6 +217,7 @@ $scope.user = {
 };
 
 Profile.html:
+
 With these key-value pairs in the $scope.user object, the profile html page renders the appropriate data for user.username, user.totalXp, etc. etc.
 
 
