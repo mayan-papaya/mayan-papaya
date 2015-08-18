@@ -23,11 +23,8 @@ Please read below for a detailed account of the functionality behind TriviaWithF
 1) ClIENT SIDE:
 
 Navigation.js
-
 Profile.js
-
 Stats.js
-
 Trivia.js
 
 User.js (for user functions)
