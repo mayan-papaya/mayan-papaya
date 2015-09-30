@@ -1,6 +1,6 @@
 # Project Name
 
-> Trivia With Friends!
+> Trivia Battle!
 
 ## Team
 
@@ -10,13 +10,13 @@
 
 ## Table of Contents
 
-TriviaWithFriends is a great way to challenge your friends to trivia showdowns! Finally figure out which one of you has more random knowledge of the world! TriviaWithFriends will keep track of your success (or lack of success) answering questions over time, so you can always check-in on your stats. Jump right in and see how you do!
+Trivia Battle is a great way to challenge your friends to trivia showdowns! Finally figure out which one of you has more random knowledge of the world! Trivia Battle will keep track of your success (or lack of success) answering questions over time, so you can always check-in on your stats. Jump right in and see how you do!
 
-Here is a link to the deployed version of our app: https://triviawithfriends.herokuapp.com/
+Here is a link to the deployed version of our app: https://triviabattle.herokuapp.com/
 
-We used the MEAN tech stack to create TriviaWithFriends: Mongoose, Express, Angular, and Node. Challenges during our project included finding the right API, structuring the optimal dynamics for the game, and having user information update appropriately.
+We used the MEAN tech stack to create Trivia Battle: Mongoose, Express, Angular, and Node. Challenges during our project included finding the right API, structuring the optimal dynamics for the game, and having user information update appropriately.
 
-Please read below for a detailed account of the functionality behind TriviaWithFriends!
+Please read below for a detailed account of the functionality behind Trivia Battle!
 
 
 
