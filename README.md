@@ -1,6 +1,4 @@
-# Project Name
-
-> Trivia Battle!
+# Trivia Battle
 
 ## Team
 
